@@ -67,7 +67,7 @@ let configName = path.basename(configStr);
 let remoteConfig = configName.indexOf(':')>-1;
 let configPath = path.dirname(configStr);
 if (!configPath || (configPath === '.')) configPath = './configs';
-let configFile = path.resolve(configPath,configName)+'.json';
+let configFile = path.resolve(__dirname,configPath,configName)+'.json';
 let config = remoteConfig ? { defaults: {} } : require(configFile);
 let defName = argv._[1] || './defs/petstore3.json';
 
